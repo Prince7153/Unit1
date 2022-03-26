@@ -8,3 +8,15 @@
 #include<string>
 #include "Input_Validation_Extended.h" 
 using namespace std;
+
+void showMenu()
+{
+  cout << "\nMENU" << endl; 
+  cout << "A: Calculate Velocity" <<endl; 
+  cout << "B: Calculate Acceleration" << endl; 
+  cout << "C: Calculate Motion" << endl; 
+  cout << "D: Calculate Weight" << endl; 
+  cout << "F: Calculate Momentum" << endl; 
+  cout << "E: Exit" << endl; 
+  cout << "X: clear the screen" << endl;  
+}
