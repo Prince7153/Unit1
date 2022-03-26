@@ -9,6 +9,10 @@
 #include "Input_Validation_Extended.h" 
 using namespace std;
 
+void showMenu();
+void handleOption(string);
+
+
 void showMenu()
 {
   cout << "\nMENU" << endl; 
@@ -20,3 +24,14 @@ void showMenu()
   cout << "E: Exit" << endl; 
   cout << "X: clear the screen" << endl;  
 }
+
+void handleOption(string userOption)
+{
+  if(userOption == "A" || userOption == "a")
+  {
+    cout << "This program will calculate velocity, Enter";
+  }
+}
+#endif
+  
+
