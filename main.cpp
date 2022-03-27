@@ -16,6 +16,8 @@ int main()
     option = validateString(option); 
     cout << reset; 
     handleOption(option);
+
+    
   }while(option != "e" && option != "E"); 
   cout << "\nGoodbye. Ending Program" << endl;
   return 0;
