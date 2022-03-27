@@ -10,6 +10,8 @@ using namespace std;
 
 void showMenu();
 void handleOption(string);
+void velocity();
+void weight();
 
 
 void showMenu()
@@ -28,21 +30,7 @@ void handleOption(string userOption)
 {
   if(userOption == "A" || userOption == "a")
   {
-    double ds; 
-    string dsUnits;
-    double dt;
-    string dtUnits;
-    cout << "This program will calculate velocity\nEnter Value of ds: ";
-    cin >> ds;
-    cout << "\nEnter unit of ds: ";
-    cin.ignore();
-    cin >> dsUnits;
-    cout << "\nEnter Value of dt: ";
-    cin >> dt;
-    cout << "\nEnter unit of dt: ";
-    cin >> dtUnits;
-    double v  = ds / dt;
-    cout << v << dsUnits << "/" << dtUnits << endl;
+    velocity();
   }
   else if(userOption == "B" || userOption == "b")
   {
@@ -54,7 +42,7 @@ void handleOption(string userOption)
   }
   else if(userOption == "D" || userOption == "d")
   {
-    
+    weight();
   }
   else if(userOption == "E" || userOption == "e")
   {
@@ -71,6 +59,41 @@ void handleOption(string userOption)
     {
       cout << "\nInvalid input: try again." << endl; 
     }
+}
+
+void velocity()
+{
+  double ds; 
+  string dsUnits;
+  double dt;
+  string dtUnits;
+  cout << "This program will calculate velocity\nEnter Value of ds: ";
+  cin >> ds;
+  cout << "Enter unit of ds: ";
+  cin >> dsUnits;
+  cout << "Enter Value of dt: ";
+  cin >> dt;
+  cout << "Enter unit of dt: ";
+  cin >> dtUnits;
+  double v  = ds / dt;
+  cout << v << dsUnits << "/" << dtUnits << endl;
+}
+
+void weight()
+{
+  double mass;
+  double gravity;
+  double weight; 
+  string unit;
+  cout << "This Program will calculate Weight\n";
+  cout << "Enter unit of mass: ";
+  cin >> mass;
+  cout << "Enter unit of gravity: ";
+  cin >> gravity;
+  weight = mass*gravity;
+  cout << "Enter unit of measure: ";
+  cin >> unit;
+  cout << "Weight = " << weight << " " << unit << "\n";
 }
 
 #endif
