@@ -1,4 +1,3 @@
-// Jobanpreet Singh COSC 1437 
 // Teacher Dr. T
 // Functions file Unit 1
 
@@ -10,7 +9,6 @@
 using namespace std;
 
 void showMenu();
-void velocity();
 void handleOption(string);
 
 
@@ -30,7 +28,21 @@ void handleOption(string userOption)
 {
   if(userOption == "A" || userOption == "a")
   {
-    velocity();
+    double ds; 
+    string dsUnits;
+    double dt;
+    string dtUnits;
+    cout << "This program will calculate velocity\nEnter Value of ds: ";
+    cin >> ds;
+    cout << "\nEnter unit of ds: ";
+    cin.ignore();
+    cin >> dsUnits;
+    cout << "\nEnter Value of dt: ";
+    cin >> dt;
+    cout << "\nEnter unit of dt: ";
+    cin >> dtUnits;
+    double v  = ds / dt;
+    cout << v << dsUnits << "/" << dtUnits << endl;
   }
   else if(userOption == "B" || userOption == "b")
   {
@@ -59,26 +71,6 @@ void handleOption(string userOption)
     {
       cout << "\nInvalid input: try again." << endl; 
     }
-}
-
-void velocity()
-{
-  double ds; 
-  string dsUnits;
-  double dt;
-  string dtUnits;
-  cout << "This program will calculate velocity\nEnter Value of ds: ";
-  cin >> ds;
-  cout << "\nEnter unit of ds: ";
-  cin.ignore();
-  cin >> dsUnits;
-  //getline(cin, dsUnits);
- // cout << "\nEnter Value of dt: ";
-  //cin >> dt;
-  //cout << "\nEnter unit of dt: ";
- // getline(cin, dtUnits);
- // double v  = ds / dt;
- // cout << v << dsUnits << "/" << dtUnits << endl;
 }
 
 #endif
