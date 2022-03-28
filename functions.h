@@ -12,6 +12,7 @@ void showMenu();
 void handleOption(string);
 void velocity();
 void weight();
+void momentum();
 
 
 void showMenu()
@@ -43,6 +44,10 @@ void handleOption(string userOption)
   else if(userOption == "D" || userOption == "d")
   {
     weight();
+  }
+  else if(userOption == "F" || userOption == "f")
+  {
+    momentum();
   }
   else if(userOption == "E" || userOption == "e")
   {
@@ -94,6 +99,23 @@ void weight()
   cout << "Enter unit of measure: ";
   cin >> unit;
   cout << "Weight = " << weight << " " << unit << "\n";
+}
+
+void momentum()
+{
+  double mass;
+  double velocity;
+  double momentum; 
+  string unit;
+  cout << "This Program will calculate Momentum\n";
+  cout << "Enter unit of mass: ";
+  cin >> mass;
+  cout << "Enter unit of velocity: ";
+  cin >> velocity;
+  momentum = mass*velocity;
+  cout << "Enter unit of measure: ";
+  cin >> unit;
+  cout << "Momentum = " << momentum << " " << unit << "\n";
 }
 
 #endif
