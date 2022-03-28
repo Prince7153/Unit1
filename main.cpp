@@ -18,7 +18,6 @@ int main()
     handleOption(option);
 
     
-  }while(option != "e" && option != "E"); 
-  cout << "\nGoodbye. Ending Program" << endl;
+  }while(option != "e" && option != "E");
   return 0;
 }
