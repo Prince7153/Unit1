@@ -13,6 +13,7 @@ void handleOption(string);
 void velocity();
 void weight();
 void momentum();
+void motion();
 void acceleration();
 void netforce();
 
@@ -41,7 +42,7 @@ void handleOption(string userOption)
   }
   else if(userOption == "C" || userOption == "c")
   {
-    
+    motion();
   }
   else if(userOption == "D" || userOption == "d")
   {
@@ -159,11 +160,46 @@ void netforce()
   cin >> accelerationunits;
   netforce = mass*acceleration;
   cout << "NetForce = " << netforce << massunits << " " << accelerationunits <<       endl;
-  
-  
+}
+
+void motion()
+{
+  cout << "This Program will calculate Motion\n";
+  cout << "Select which of the following equations to solve for:\n";
+  cout << "1. v = v0 + at\n";
+  cout << "2. s = s0 + v0t + ½at^2\n";
+  cout << "3. v^2 = v0^2 + 2a(s − s0)\n";
+  cout << "4. v̅ = ½(v + v0)\n";
+  int answer;
+  int loop = 1;
+  answer = validateInt(answer);
+  while(loop == 1)
+  {
+    if (answer == 1)
+    {
+      loop = 0;
+    }
+    else if (answer == 2)
+    {
+      loop = 0;
+    }
+    else if (answer == 3)
+    {
+      loop = 0;
+    }
+    else if (answer == 4)
+    {
+      loop = 0;
+    }
+    else
+    {
+      cout << "Invalid answer, try again";
+    }
+  }
 }
 
 
+  
 #endif
   
 
