@@ -5,6 +5,7 @@
 #define FUNCTIONS_H
 #include <iostream>
 #include<string>
+#include <iomanip>
 #include "Input_Validation_Extended.h" 
 using namespace std;
 
@@ -88,6 +89,7 @@ void velocity()
   cout << "Enter unit of dt: ";
   dtUnits = validateString(dtUnits);
   double v  = ds / dt;
+  cout << setprecision(4);
   cout << ds << " / " << dt << " = " << v << " " << dsUnits << "/" << dtUnits 
     << endl;
 }
@@ -106,6 +108,7 @@ void weight()
   weight = mass*gravity;
   cout << "Enter unit of measure: ";
   unit = validateString(unit);
+  cout << setprecision(4);
   cout << mass << " * " << gravity << " = " << weight << " " << unit << endl;
 }
 
@@ -123,6 +126,7 @@ void momentum()
   momentum = mass*velocity;
   cout << "Enter unit of measure: ";
   unit = validateString(unit);
+  cout << setprecision(4);
   cout << mass << " * " << velocity << " = " << momentum << " " << unit << endl;
 }
 
@@ -140,6 +144,7 @@ void acceleration()
   acceleration = dv/dt;
   cout << "Enter unit of measure: ";
   unit = validateString(unit);
+  cout << setprecision(4);
   cout << dv << " / " << dt << " = " << acceleration << " " << unit << endl;
 }
 
@@ -160,6 +165,7 @@ void netforce()
   cout << "Enter unit of acceleration: ";
   accelerationunits = validateString(accelerationunits);
   netforce = mass*acceleration;
+  cout << setprecision(4);
   cout << mass << " " << massunits << " * " << acceleration << " "
     << accelerationunits << " = " << netforce << " " << massunits << " "
     << accelerationunits << endl;
@@ -173,6 +179,7 @@ void motion()
   cout << "2. s = s0 + v0t + ½at^2\n";
   cout << "3. v^2 = v0^2 + 2a(s − s0)\n";
   cout << "4. v̅ = ½(v + v0)\n";
+  cout << setprecision(4);
   int answer;
   int loop = 1;
   answer = validateInt(answer);
@@ -217,6 +224,7 @@ void motion()
     else if (answer == 4)
     {
       loop = 0;
+      cout << ""
     }
     else
     {
