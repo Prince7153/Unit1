@@ -82,13 +82,14 @@ void velocity()
   cout << "This program will calculate velocity\nEnter Value of ds: ";
   ds = validateDouble(ds);
   cout << "Enter unit of ds: ";
-  cin >> dsUnits;
+  dsUnits = validateString(dsUnits);
   cout << "Enter Value of dt: ";
   dt = validateDouble(dt);
   cout << "Enter unit of dt: ";
-  cin >> dtUnits;
+  dtUnits = validateString(dtUnits);
   double v  = ds / dt;
-  cout << v << dsUnits << "/" << dtUnits << endl;
+  cout << ds << " / " << dt << " = " << v << " " << dsUnits << "/" << dtUnits 
+    << endl;
 }
 
 void weight()
@@ -104,8 +105,8 @@ void weight()
   gravity = validateDouble(gravity);
   weight = mass*gravity;
   cout << "Enter unit of measure: ";
-  cin >> unit;
-  cout << "Weight = " << weight << " " << unit << "\n";
+  unit = validateString(unit);
+  cout << mass << " * " << gravity << " = " << weight << " " << unit << endl;
 }
 
 void momentum()
@@ -121,8 +122,8 @@ void momentum()
   velocity = validateDouble(velocity);
   momentum = mass*velocity;
   cout << "Enter unit of measure: ";
-  cin >> unit;
-  cout << "Momentum = " << momentum << " " << unit << "\n";
+  unit = validateString(unit);
+  cout << mass << " * " << velocity << " = " << momentum << " " << unit << endl;
 }
 
 void acceleration()
@@ -138,8 +139,8 @@ void acceleration()
   dt = validateDouble(dt);
   acceleration = dv/dt;
   cout << "Enter unit of measure: ";
-  cin >> unit;
-  cout << "Acceleration = " << acceleration << " " << unit << "\n";
+  unit = validateString(unit);
+  cout << dv << " / " << dt << " = " << acceleration << " " << unit << endl;
 }
 
 void netforce()
@@ -153,13 +154,15 @@ void netforce()
   cout << "Enter Value of mass: ";
   mass = validateDouble(mass);
   cout << "Enter unit of mass: ";
-  cin >> massunits;
+  massunits = validateString(massunits);
   cout << "Enter Value of acceleration: ";
   acceleration = validateDouble(acceleration);
   cout << "Enter unit of acceleration: ";
-  cin >> accelerationunits;
+  accelerationunits = validateString(accelerationunits);
   netforce = mass*acceleration;
-  cout << "NetForce = " << netforce << massunits << " " << accelerationunits <<       endl;
+  cout << mass << " " << massunits << " * " << acceleration << " "
+    << accelerationunits << " = " << netforce << " " << massunits << " "
+    << accelerationunits << endl;
 }
 
 void motion()
@@ -209,6 +212,7 @@ void motion()
     else if (answer == 3)
     {
       loop = 0;
+      
     }
     else if (answer == 4)
     {
