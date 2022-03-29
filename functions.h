@@ -196,7 +196,7 @@ void motion()
       cout << "Enter value of t: ";
       t = validateDouble(t);
       v = v0 + (a*t);
-      cout << v0 << " + " << a << "*" << t << " = " << v;
+      cout << v0 << " + " << a << "*" << t << " = " << v << endl;
       
     }
     else if (answer == 2)
@@ -214,12 +214,24 @@ void motion()
       double t2 = t*t;
       s = s0 + (v0*t) + ((0.5*a)*(t2));
       cout << s0 << " + " << v0 << "*" << t << " + " << "1/2*" << a << "*" << t 
-        << "^2 = " << s;
+        << "^2 = " << s << endl;
     }
     else if (answer == 3)
     {
       loop = 0;
-      
+      double v0,a,s,s0,v2,v02;
+      cout << "Enter value of v0: ";
+      v0 = validateDouble(v0);
+      cout << "Enter value of a: ";
+      a = validateDouble(a);
+      cout << "Enter value of s: ";
+      s = validateDouble(s);
+      cout << "Enter value of s0: ";
+      s0 = validateDouble(s0);
+      v02 = v0 * v0;
+      v2 = v02 + (2*a)*(s-s0);
+      cout << v0 << "^2 + 2 * " << a << "( " << s << " - " << s0 << ") = "
+        << v2 << endl;
     }
     else if (answer == 4)
     {
