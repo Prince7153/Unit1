@@ -80,11 +80,11 @@ void velocity()
   double dt;
   string dtUnits;
   cout << "This program will calculate velocity\nEnter Value of ds: ";
-  ds = validateInt(ds);
+  ds = validateDouble(ds);
   cout << "Enter unit of ds: ";
   cin >> dsUnits;
   cout << "Enter Value of dt: ";
-  dt = validateInt(dt);
+  dt = validateDouble(dt);
   cout << "Enter unit of dt: ";
   cin >> dtUnits;
   double v  = ds / dt;
@@ -99,9 +99,9 @@ void weight()
   string unit;
   cout << "This Program will calculate Weight\n";
   cout << "Enter Value of mass: ";
-  cin >> mass;
+  mass = validateDouble(mass);
   cout << "Enter Value of gravity: ";
-  cin >> gravity;
+  gravity = validateDouble(gravity);
   weight = mass*gravity;
   cout << "Enter unit of measure: ";
   cin >> unit;
@@ -115,10 +115,10 @@ void momentum()
   double momentum; 
   string unit;
   cout << "This Program will calculate Momentum\n";
-  cout << "Enter unit of mass: ";
-  cin >> mass;
-  cout << "Enter unit of velocity: ";
-  cin >> velocity;
+  cout << "Enter Value of mass: ";
+  mass = validateDouble(mass);
+  cout << "Enter Value of velocity: ";
+  velocity = validateDouble(velocity);
   momentum = mass*velocity;
   cout << "Enter unit of measure: ";
   cin >> unit;
@@ -132,10 +132,10 @@ void acceleration()
   double acceleration;
   string unit;
   cout << "This Program will calculate Acceleration\n";
-  cout << "Enter unit of dv: ";
-  cin >> dv;
-  cout << "Enter unit of dt: ";
-  cin >> dt;
+  cout << "Enter Value of dv: ";
+  dv = validateDouble(dv);
+  cout << "Enter Value of dt: ";
+  dt = validateDouble(dt);
   acceleration = dv/dt;
   cout << "Enter unit of measure: ";
   cin >> unit;
@@ -150,12 +150,12 @@ void netforce()
   string accelerationunits;
   double acceleration;
   cout << "This Program will calculate Net Force\n";
-  cout << "Enter unit of mass: ";
-  cin >> mass;
+  cout << "Enter Value of mass: ";
+  mass = validateDouble(mass);
   cout << "Enter unit of mass: ";
   cin >> massunits;
-  cout << "Enter unit of acceleration: ";
-  cin >> acceleration;
+  cout << "Enter Value of acceleration: ";
+  acceleration = validateDouble(acceleration);
   cout << "Enter unit of acceleration: ";
   cin >> accelerationunits;
   netforce = mass*acceleration;
@@ -178,16 +178,13 @@ void motion()
     if (answer == 1)
     {
       loop = 0;
-      double v0;
-      double a;
-      double t;
-      double v;
+      double v0,a,t,v;
       cout << "Enter value of v0: ";
-      cin >> v0;
+      v0 = validateDouble(v0);
       cout << "Enter value of a: ";
-      cin >> a;
+      a = validateDouble(a);
       cout << "Enter value of t: ";
-      cin >> t;
+      t = validateDouble(t);
       v = v0 + (a*t);
       cout << v0 << " + " << a << "*" << t << " = " << v;
       
@@ -197,17 +194,17 @@ void motion()
       loop = 0;
       double s0,v0,t,a,s;
       cout << "Enter value of s0: ";
-      cin >> s0;
+      s0 = validateDouble(s0);
       cout << "Enter value of v0: ";
-      cin >> v0;
+      v0 = validateDouble(v0);
       cout << "Enter value of t: ";
-      cin >> t;
+      t = validateDouble(t);
       cout << "Enter value of a: ";
-      cin >> a;
+      a = validateDouble(a);
       double t2 = t*t;
       s = s0 + (v0*t) + ((0.5*a)*(t2));
-      cout << s0 << " + " << v0 << "*" << t << " + " << "1/2*" << a << "*" << t << 
-        "^2 = " << s;
+      cout << s0 << " + " << v0 << "*" << t << " + " << "1/2*" << a << "*" << t 
+        << "^2 = " << s;
     }
     else if (answer == 3)
     {
