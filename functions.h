@@ -224,11 +224,18 @@ void motion()
     else if (answer == 4)
     {
       loop = 0;
-      cout << ""
+      double v,v0,vbar;
+      cout << "Enter value of v: ";
+      v = validateDouble(v);
+      cout << "Enter value of v0: ";
+      v0 = validateDouble(v0);
+      vbar = 0.5*(v+v0);
+      cout << "1/2 * (" << v << " + " << v0 << ") = " << v << endl;
     }
     else
     {
-      cout << "Invalid answer, try again";
+      cout << "Invalid answer, try again\n";
+      answer = validateInt(answer);
     }
   }
 }
