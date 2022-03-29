@@ -80,11 +80,11 @@ void velocity()
   double dt;
   string dtUnits;
   cout << "This program will calculate velocity\nEnter Value of ds: ";
-  cin >> ds;
+  ds = validateInt(ds);
   cout << "Enter unit of ds: ";
   cin >> dsUnits;
   cout << "Enter Value of dt: ";
-  cin >> dt;
+  dt = validateInt(dt);
   cout << "Enter unit of dt: ";
   cin >> dtUnits;
   double v  = ds / dt;
@@ -98,9 +98,9 @@ void weight()
   double weight; 
   string unit;
   cout << "This Program will calculate Weight\n";
-  cout << "Enter unit of mass: ";
+  cout << "Enter Value of mass: ";
   cin >> mass;
-  cout << "Enter unit of gravity: ";
+  cout << "Enter Value of gravity: ";
   cin >> gravity;
   weight = mass*gravity;
   cout << "Enter unit of measure: ";
@@ -178,10 +178,36 @@ void motion()
     if (answer == 1)
     {
       loop = 0;
+      double v0;
+      double a;
+      double t;
+      double v;
+      cout << "Enter value of v0: ";
+      cin >> v0;
+      cout << "Enter value of a: ";
+      cin >> a;
+      cout << "Enter value of t: ";
+      cin >> t;
+      v = v0 + (a*t);
+      cout << v0 << " + " << a << "*" << t << " = " << v;
+      
     }
     else if (answer == 2)
     {
       loop = 0;
+      double s0,v0,t,a,s;
+      cout << "Enter value of s0: ";
+      cin >> s0;
+      cout << "Enter value of v0: ";
+      cin >> v0;
+      cout << "Enter value of t: ";
+      cin >> t;
+      cout << "Enter value of a: ";
+      cin >> a;
+      double t2 = t*t;
+      s = s0 + (v0*t) + ((0.5*a)*(t2));
+      cout << s0 << " + " << v0 << "*" << t << " + " << "1/2*" << a << "*" << t << 
+        "^2 = " << s;
     }
     else if (answer == 3)
     {
